@@ -4,14 +4,13 @@ import {TiSocialInstagram} from 'react-icons/ti';
 import {FaTwitter} from 'react-icons/fa';
 import {FaYoutube} from 'react-icons/fa';
 
-
 import './Footer.scss'
+
 
 export default class Footer extends Component {
   render() {
     return (
-      <div className="Footer">
-
+    <div className="FooterSection">
         <div className="footer-wrapper">
           <div className="logo-wrapper">
             <FaFacebookSquare size="30px" className="logo"/>
@@ -55,9 +54,8 @@ export default class Footer extends Component {
             <div className="address-text">공정거래위원회 웹사이트 링크</div>
             <div className="address-text">i-06db45d2f4485e5d7</div>
           </div>
-
         </div>
-      </div>
+       </div>
     );
   }
 }

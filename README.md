@@ -9,3 +9,7 @@
 - [ ] my choice
 ### right
 - [ ] Search
+
+---
+
+- [x] Router생성 후 각 페이지에 연결

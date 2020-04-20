@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './ClassifiedContentsList.scss';
 import * as Data from './classifiedContentsMockData';
-import ClassifiedContentsItem from "../../../Components/MainPage/ClassifiedContentsList/ClassifiedContentsItem";
+import ClassifiedContentsItem from "../../../Components/HomePage/ClassifiedContentsList/ClassifiedContentsItem";
 import {tvApi} from '../../../api'
 
 
