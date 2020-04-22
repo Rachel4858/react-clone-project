@@ -17,7 +17,7 @@ const MoviePresenter = (props) => {
     <>
       <Container>
         {nowPlaying.isLoading ? (<div> nowPlaying 로딩중입니다..</div>) :
-          <Section title="nowPlaying Shows">
+          <Section title="NowPlaying Movies">
             {nowPlaying.data.map((item) =>
               (<Item key={item.id}
                      id={item.id}
@@ -30,7 +30,7 @@ const MoviePresenter = (props) => {
             )}</Section>}
 
         {popular.isLoading ? (<div> popular 로딩중입니다..</div>) :
-          <Section title="Popular Shows">
+          <Section title="Popular Movies">
             {popular.data.map((item) =>
               (<Item key={item.id}
                      id={item.id}
@@ -44,7 +44,7 @@ const MoviePresenter = (props) => {
             )}</Section>}
 
         {upcoming.isLoading ? (<div> upcoming 로딩중입니다..</div>) :
-          <Section title="Airing Today Shows">
+          <Section title="UpComing Movies">
             {upcoming.data.map((item) =>
               (<Item key={item.id}
                      id={item.id}
