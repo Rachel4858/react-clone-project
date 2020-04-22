@@ -10,6 +10,7 @@
 - [x] TVPage
 - [x] MoviePage
 - [ ] **DetailPage 1**
+    - [ ] 영상 가져오기
 
 
 
@@ -24,6 +25,8 @@
 
 ### right
 - [ ] **Search Page 2**
+- [ ] kids(장르가 animation) - UI새롭게
+
 
 ---
 
