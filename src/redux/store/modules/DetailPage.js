@@ -10,7 +10,7 @@ export const getDetailDataFailure = (payload) => ({type: GET_DETAIL_DATA_FAILURE
 
 
 //state(store 안에서 사용할)
-const initialState = {  //isLoading,data,error은 api단위로
+const initialState = {
   isLoading: true,
   result: null,
   error: null
@@ -18,7 +18,6 @@ const initialState = {  //isLoading,data,error은 api단위로
 
 //reducer
 export default function detailPage(state = initialState, action) {
-  console.log(action.payload) // 안찍힌다.
   // {payload :{data:res.data.results}}
 
   switch (action.type) {

@@ -18,7 +18,7 @@ export default () => (
         <Route path="/movie" exact component={MovieContainer}/>
         <Route path="/search" exact component={SearchContainer}/>
         <Route path="/movie/:id" exact component={DetailContainer}/>
-        <Route path="/tv/:id" isTVv="true" exact component={DetailContainer}/>
+        <Route path="/tv/:id" exact component={DetailContainer}/>
         <Redirect from="*" to="/"/>
       </Switch>
       <Footer/>
