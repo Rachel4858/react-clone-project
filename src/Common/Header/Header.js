@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from "react-router-dom"
 import netflixLogo from '../../images/netflixLogo.png';
 import {MdSearch} from 'react-icons/md';
 import {GiPresent} from 'react-icons/gi'
@@ -15,21 +16,21 @@ export default class Header extends Component {
 
         <div className="left-menu-wrapper">
           <img src={netflixLogo} className="logo"/>
-          <div className="home">홈</div>
-          <div className="tv-program">TV프로그램</div>
-          <div className="movie">영화</div>
-          <div className="newest-contents">최신 콘텐츠</div>
-          <div className="my-contents">내가 찜한 콘텐츠</div>
+          <Link to="/" style={{ textDecoration: 'none', color : "#ffffff"}}><div className="menu">홈</div></Link>
+          <Link to="/tv" style={{ textDecoration: 'none', color : "#ffffff"}}><div className="menu">TV프로그램</div></Link>
+          <Link to="/movie" style={{ textDecoration: 'none', color : "#ffffff"}}><div className="menu">영화</div></Link>
+          <div className="menu">최신 콘텐츠</div>
+          <div className="menu">내가 찜한 콘텐츠</div>
         </div>
 
         <div className="right-menu-wrapper">
-          <div className="search"><MdSearch size="24"/></div>
-          <div className="kidz">키즈</div>
-          <div className="present"><GiPresent size="24"/></div>
-          <div className="notice"><MdNotifications size="24"/></div>
+          <Link to="/search" style={{ textDecoration: 'none', color : "#ffffff"}}><div className="menu"><MdSearch size="24"/></div></Link>
+          <div className="menu">키즈</div>
+          <div className="menu"><GiPresent size="24"/></div>
+          <div className="menu"><MdNotifications size="24"/></div>
           <div className="setting-nav-bar">
             <img src={myLogo}/>
-            <TiArrowSortedDown size="24"/>
+            <TiArrowSortedDown size="24" className="menu"/>
           </div>
         </div>
 

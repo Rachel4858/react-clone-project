@@ -1,11 +1,9 @@
 .Header {
-  background-color: #000000;
   height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0px 40px 0px 40px;
-  color:#ffffff;
 
   .left-menu-wrapper {
     width:500px;
@@ -17,16 +15,12 @@
     .logo {
       width:110px
     }
-    .home {
-    }
-    .tv-program {
-    }
-    .movie {
-    }
-    .newest-contents {
-    }
-    .my-contents {
-    }
+      .menu {
+        &:hover {
+          opacity: 0.5;
+          transition:0.2s;
+        }
+      }
   }
 
   .right-menu-wrapper {
@@ -36,13 +30,11 @@
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    .search {
-    }
-    .kidz {
-    }
-    .present {
-    }
-    .notice {
+    .menu {
+      &:hover {
+        opacity: 0.5;
+        transition:0.2s;
+      }
     }
     .setting-nav-bar {
       display: flex;
@@ -51,6 +43,12 @@
       align-items: center;
       img {
         width:35px;
+      }
+      .nemu {
+        &:hover {
+          opacity: 0.5;
+          transition:0.2s;
+        }
       }
     }
   }
