@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Section from '../../Common/Section'
-import Item from "../../Common/Item";
+import Section from '../../Components/Section'
+import Item from "../../Components/Item";
 
 const Container = styled.div`
   padding:10px 50px;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import Router from '../src/Common/Router'
-import GlobalStyles from "../src/Common/GlobalStyles"
+import Router from './Components/Router'
+import GlobalStyles from "./Components/GlobalStyles"
 
 export default class App extends Component {
   render() {
