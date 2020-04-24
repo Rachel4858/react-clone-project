@@ -9,7 +9,7 @@
     - [ ] 사용자 고르기 및 추가하기(localstorage?)
 - [x] TVPage
 - [x] MoviePage
-- [ ] **DetailPage 1**
+- [x] DetailPage
     - [ ] 영상 가져오기
 
 

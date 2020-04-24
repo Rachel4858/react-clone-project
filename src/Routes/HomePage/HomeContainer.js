@@ -17,7 +17,9 @@ class HomeContainer extends React.Component {
   render() {
 
     return (
+      <>
       <HomePresenter>홈 프레젠처</HomePresenter>
+        </>
     )
   }
 }

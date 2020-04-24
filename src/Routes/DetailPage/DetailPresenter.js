@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import ReactPlayer from "react-player";
 
 const Loading = styled.div`
   padding-left:50px`;
@@ -73,8 +74,8 @@ const Overview = styled.p`
   width:50%;
   `;
 
-const DetailPresenter = ({isLoading, result, error}) => {
-  console.log(result);
+const DetailPresenter = ({isLoading, result, error, videoData}) => {
+  const videoUrl = `https://www.youtube.com/watch?v=${videoData.videoKey}`;
 
   return (
     <>
@@ -108,6 +109,7 @@ const DetailPresenter = ({isLoading, result, error}) => {
                 </Item>
               </ItemContainer>
               <Overview>{result.overview}</Overview>
+              <ReactPlayer url={videoUrl} playing controls/>
             </Date>
           </Content>
 

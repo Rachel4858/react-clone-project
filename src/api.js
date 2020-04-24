@@ -35,6 +35,8 @@ export const movieApi = {
       params: {
         query: encodeURIComponent(term)
       }
-    })
+    }),
+  video: id => axios.get(`${base_url}/movie/${id}/videos?api_key=${api_key}`),
+
 };
 
