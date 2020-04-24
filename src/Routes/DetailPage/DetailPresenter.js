@@ -47,9 +47,12 @@ const Cover = styled.div`
 
   `;
 
-const Date = styled.div`
+const Data = styled.div`
   width:70%;
   margin-left:10px;
+  
+  // display:flex;
+  // flex-direction:column;
 `;
 
 const Title = styled.h3`
@@ -72,7 +75,11 @@ const Overview = styled.p`
   opacity: 0.7;
   line-height:1.5;
   width:50%;
+  margin-bottom:40px;
   `;
+const ReactVideoPlayer = styled(ReactPlayer)`
+  `;
+
 
 const DetailPresenter = ({isLoading, result, error, videoData}) => {
   const videoUrl = `https://www.youtube.com/watch?v=${videoData.videoKey}`;
@@ -89,7 +96,7 @@ const DetailPresenter = ({isLoading, result, error, videoData}) => {
             <Cover bgImage={result.poster_path ? `https://image.tmdb.org/t/p/original${result.poster_path}`
               : require("../../images/noPosterSmall.png")}
             />
-            <Date>
+            <Data>
               <Title>{
                 result.original_title
                   ? result.original_title
@@ -109,8 +116,10 @@ const DetailPresenter = ({isLoading, result, error, videoData}) => {
                 </Item>
               </ItemContainer>
               <Overview>{result.overview}</Overview>
-              <ReactPlayer url={videoUrl} playing controls/>
-            </Date>
+              {!videoData.videoKey ? <div>비디오를 준비중입니다...</div> :
+                <ReactVideoPlayer url={videoUrl} playing controls/>
+              }
+            </Data>
           </Content>
 
         </Container>

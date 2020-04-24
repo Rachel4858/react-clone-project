@@ -18,7 +18,7 @@ class HomeContainer extends React.Component {
 
     return (
       <>
-      <HomePresenter>홈 프레젠처</HomePresenter>
+      <HomePresenter></HomePresenter>
         </>
     )
   }

@@ -17,7 +17,8 @@ export const tvApi = {
       params: {
         query: encodeURIComponent(term)
       }
-    })
+    }),
+  video: id => axios.get(`${base_url}/movie/${id}/videos?api_key=${api_key}`),
 };
 
 
@@ -37,6 +38,5 @@ export const movieApi = {
       }
     }),
   video: id => axios.get(`${base_url}/movie/${id}/videos?api_key=${api_key}`),
-
 };
 

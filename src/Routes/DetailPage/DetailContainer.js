@@ -7,21 +7,21 @@ import {connect} from "react-redux";
 
 
 class DetailContainer extends React.Component {
-  constructor(props) {
-    super(props);
-
-    const parseIntId = parseInt(this.props.match.params.id);
-    const isTV = this.props.match.path.includes("/tv/");
-
-
-    this.props.getVideoData();
-    movieApi.video(parseIntId).then((res) => {
-      this.props.getVideoDataSuccess({result: res.data.results[0].key})
-      console.log(res)
-    }).catch((err) => {
-      this.props.getVideoDataFailure({error: err})
-    })
-  }
+  // constructor(props) {
+  //   super(props);
+  //
+  //   const parseIntId = parseInt(this.props.match.params.id);
+  //   const isTV = this.props.match.path.includes("/tv/");
+  //
+  //
+  //   this.props.getVideoData();
+  //   movieApi.video(parseIntId).then((res) => {
+  //     this.props.getVideoDataSuccess({result: res.data.results[0].key})
+  //     console.log(res)
+  //   }).catch((err) => {
+  //     this.props.getVideoDataFailure({error: err})
+  //   })
+  // }
 
   componentDidMount() {
     this.props.getDetailData();
@@ -30,6 +30,7 @@ class DetailContainer extends React.Component {
     const isTV = this.props.match.path.includes("/tv/");
 
     if (isTV) {
+      this.getTvVideoData(parseIntId);
       tvApi.tvDetail(parseIntId).then((res) => {
         this.props.getDetailDataSuccess({result: res.data})
       }).catch((err) => {
@@ -37,23 +38,43 @@ class DetailContainer extends React.Component {
       })
 
     } else {
+      this.getMovieVideoData(parseIntId);
       movieApi.movieDetail(parseIntId).then((res) => {
         this.props.getDetailDataSuccess({result: res.data})
       }).catch((err) => {
         this.props.getDetailDataFailure({error: err})
       });
-
-      // this.props.getVideoData();
-      // movieApi.video(parseIntId).then((res) => {
-      //   this.props.getVideoDataSuccess({result: res.results[0].key})
-      //   console.log(res)
-      // }).catch((err) => {
-      //   this.props.getVideoDataFailure({error: err})
-      // })
-
     }
 
   }
+
+  getMovieVideoData = (parseIntId) => {
+    this.props.getVideoData();
+    movieApi.video(parseIntId).then((res) => {
+      if(res.data.results) {
+        this.props.getVideoDataSuccess({result: res.data.results[0].key})
+      } else {
+        this.props.getVideoDataSuccess({result: null})
+      }
+    }).catch((err) => {
+      this.props.getVideoDataFailure({error: err})
+    })
+  };
+
+  getTvVideoData = (parseIntId) => {
+    this.props.getVideoData();
+    tvApi.video(parseIntId).then((res) => {
+      if(res.data.results) {
+        this.props.getVideoDataSuccess({result: res.data.results[res.data.results.length - 1].key})
+        console.log(res)
+      } else {
+        this.props.getVideoDataSuccess({result: null})
+      }
+    }).catch((err) => {
+      this.props.getVideoDataFailure({error: err})
+    })
+  };
+
 
   render() {
     const {isLoading, result, error, videoData} = this.props;
