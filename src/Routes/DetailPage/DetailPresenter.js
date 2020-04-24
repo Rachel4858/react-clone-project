@@ -11,7 +11,7 @@ const Container = styled.div`
   width: 100%;
   position: relative;
   padding: 50px;
-  margin-bottom:50px;
+  // margin-bottom:50px;
 
 `;
 const Backdrop = styled.div`
