@@ -57,10 +57,12 @@ const SearchPresenter = ({searchTerm, tvData, movieData, handleSubmit, updateTer
               {movieData.data.map((item) =>
                 (<Item key={item.id}
                        id={item.id}
-                       title={item.original_name}
+                       title={item.original_title}
                        rating={item.vote_average}
                        imageUrl={item.poster_path}
-                       year={item.first_air_date && item.first_air_date.substring(0, 4)}
+                       year={item.release_date && item.release_date.substring(0, 4)}
+                       isTV={false}
+
                 />)
               )}</Section>}</>)
         }

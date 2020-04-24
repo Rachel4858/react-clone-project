@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { FaStar } from 'react-icons/fa'
+import {FaStar} from 'react-icons/fa'
 import {Link} from "react-router-dom";
+import ReactPlayer from "react-player";
 
 const Container = styled.div`
   font-size:12px;
@@ -44,26 +45,41 @@ const Year = styled.div`
     color:rgba(255, 255, 255, 0.5);
     `;
 
+const FaStars = styled(FaStar)`
+color:yellow;
+  `;
+
+function handleStar(rating) {
+  let starCount = Math.floor(rating) / 2;
+  let arr = [];
+  for (let i = 0; i < starCount; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
+
 const Item = ({id, title, rating, imageUrl, year, isTV}) => (
-  <Link to={isTV ? `/tv/${id}` : `/movie/${id}`} style={{ textDecoration: 'none', color : "#ffffff"}}>
-  <Container>
-    <ImageContainer>
-      <Image
-        bgUrl={imageUrl ? `https://image.tmdb.org/t/p/w300/${imageUrl}` : require("../../src/images/noPosterSmall.png")}/>
-      <Rating><FaStar/> {rating}/10</Rating>
-    </ImageContainer>
-    <Title>{title}</Title>
-    <Year>{year}</Year>
-  </Container>
+  <Link to={isTV ? `/tv/${id}` : `/movie/${id}`} style={{textDecoration: 'none', color: "#ffffff"}}>
+    <Container>
+      <ImageContainer>
+        <Image
+          bgUrl={imageUrl ? `https://image.tmdb.org/t/p/w300/${imageUrl}` : require("../../src/images/noPosterSmall.png")}/>
+        <Rating>{handleStar(rating).map(() => {
+          return <FaStars/>
+        })}{rating}/10</Rating>
+      </ImageContainer>
+      <Title>{title}</Title>
+      <Year>{year}</Year>
+    </Container>
   </Link>
 );
 
 Item.propTypes = {
-  id:PropTypes.number.isRequired,
-  title:PropTypes.string.isRequired,
-  rating:PropTypes.number,
-  imageUrl:PropTypes.string,
-  year:PropTypes.string
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  rating: PropTypes.number,
+  imageUrl: PropTypes.string,
+  year: PropTypes.string
 };
 
 export default Item
