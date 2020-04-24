@@ -49,7 +49,7 @@ export default function moviePage(state = initialState, action) {
       return {
         ...state, // 다른 state 값이 있을 수 있으니 불변성 유지를 위해 필요하다.
         nowPlaying: {
-          ...state,
+          ...state.nowPlaying,
           isLoading: true,
         }
       };
@@ -57,7 +57,7 @@ export default function moviePage(state = initialState, action) {
       return {
         ...state,
         nowPlaying: {
-          ...state,
+          ...state.nowPlaying,
           isLoading: false,
           data: action.payload.data,
         }
@@ -66,7 +66,7 @@ export default function moviePage(state = initialState, action) {
       return {
         ...state,
         nowPlaying: {
-          ...state,
+          ...state.nowPlaying,
           error: action.payload.error
         }
       };
@@ -75,7 +75,7 @@ export default function moviePage(state = initialState, action) {
       return {
         ...state, // 다른 state 값이 있을 수 있으니 불변성 유지를 위해 필요하다.
         popular: {
-          ...state,
+          ...state.popular,
           isLoading: true,
         }
       };
@@ -83,7 +83,7 @@ export default function moviePage(state = initialState, action) {
       return {
         ...state,
         popular: {
-          ...state,
+          ...state.popular,
           isLoading: false,
           data: action.payload.data,
         }
@@ -92,7 +92,7 @@ export default function moviePage(state = initialState, action) {
       return {
         ...state,
         popular: {
-          ...state,
+          ...state.popular,
           error: action.payload.error
         }
       };
@@ -101,7 +101,7 @@ export default function moviePage(state = initialState, action) {
       return {
         ...state, // 다른 state 값이 있을 수 있으니 불변성 유지를 위해 필요하다.
         upcoming: {
-          ...state,
+          ...state.upcoming,
           isLoading: true,
         }
       };
@@ -109,7 +109,7 @@ export default function moviePage(state = initialState, action) {
       return {
         ...state,
         upcoming: {
-          ...state,
+          ...state.upcoming,
           isLoading: false,
           data: action.payload.data,
         }
@@ -118,7 +118,7 @@ export default function moviePage(state = initialState, action) {
       return {
         ...state,
         upcoming: {
-          ...state,
+          ...state.upcoming,
           error: action.payload.error
         }
       };
